@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
 
-// Require controller modules
-var index_controller = require('../controllers/indexController');
 
 /* GET home page. */
-router.get('/', index_controller.index);
+router.get('/', (req, res) => {
+  res.render('index', { title: 'A Simple Express-API '});
+});
 
 module.exports = router;
