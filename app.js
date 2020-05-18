@@ -37,4 +37,21 @@ app.use(function(req, res, next) {
     res.render('error');
   });
 
+// Setup database
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('expressapi', 'alit', 'expressApi', {
+  host: 'localhost',
+  dialect: 'postgres'
+});
+
+
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Database connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
 module.exports = app;
