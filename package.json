@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "client-install": "cd client && npm install",
+    "client": "npm start --prefix client",
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
-    "serverstart": "DEBUG=express-api:* npm run devstart"
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "DEBUG=express-api:* npm run devstart"
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "concurrently": "^5.2.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "^3.1.2",

@@ -5,7 +5,7 @@ var path = require('path');
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  res.render('index', { title: 'A Simple Express-API '});
+  res.send('Go to react port')
 });
 
 module.exports = router;
