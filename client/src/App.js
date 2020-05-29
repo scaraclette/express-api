@@ -3,6 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import Cats from './components/cats/cats'
 
+import {Image} from 'cloudinary-react';
+
+
 function App() {
   return (
     <div className="App">
